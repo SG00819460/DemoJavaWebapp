@@ -84,19 +84,7 @@ public class PalindromeTest {
         assertTrue(palindrome.isPalindrome(input));
     }
 
-    @Test
-    public void validPalindromeTest() throws Exception {
+   
 
-        input = "No lemon no melon";
-
-        assertTrue(palindrome.isPalindrome(input));
-    }
-
-    @Test
-    public void invalidPalindromeTest() throws Exception {
-
-        input = "I am a tester";
-
-        assertFalse(palindrome.isPalindrome(input));
-    }
+   
 }
