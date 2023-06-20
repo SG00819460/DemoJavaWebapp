@@ -1,19 +1,14 @@
 package com.javatechie.StringPalindrome;
-
-import static org.junit.Assert.assertEquals;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest {
+public class PalindromeTest {
 
- 
+    private Palindrome palindrome;
+    private String input;
 
     @Before
     public void setUp() throws Exception {
@@ -103,5 +98,4 @@ public class AppTest {
 
         assertFalse(palindrome.isPalindrome(input));
     }
-
 }
