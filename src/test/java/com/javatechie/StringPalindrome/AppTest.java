@@ -22,7 +22,10 @@ public class AppTest {
 	public void isNotPlaindromeTest() {
 		assertEquals(false, app.isPalindrome("abc"));
 	}
-
+	@Test(expected = IllegalArgumentException.class)
+	public void isNotPlaindromeExceptionTest() {
+		assertEquals(false, app.isPalindrome(null));
+	}
 	
 	 @Test
          public void aTest() {
