@@ -13,8 +13,7 @@ import static org.junit.Assert.*;
  */
 public class AppTest {
 
-    private Palindrome palindrome;
-    private String input;
+ 
 
     @Before
     public void setUp() throws Exception {
