@@ -27,5 +27,9 @@ public class AppTest {
 	public void isNotPlaindromeExceptionTest() {
 		assertEquals(false, app.isPalindrome(null));
 	}
+	 @Test
+         public void aTest() {
+             assertEquals(true, true);
+        }
 
 }
