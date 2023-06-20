@@ -2,34 +2,107 @@ package com.javatechie.StringPalindrome;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * Unit test for simple App.
  */
 public class AppTest {
 
-	String input1 = "noon";
-	App app = new App();
-	boolean expected = true;
+    private Palindrome palindrome;
+    private String input;
 
-	@Test
-	public void isPlaindromeTest() {
-		assertEquals(expected, app.isPalindrome(input1));
-	}
+    @Before
+    public void setUp() throws Exception {
 
-	@Test
-	public void isNotPlaindromeTest() {
-		assertEquals(false, app.isPalindrome("abc"));
-	}
+        input = null;
+        palindrome = new Palindrome();
 
-	@Test(expected = IllegalArgumentException.class)
-	public void isNotPlaindromeExceptionTest() {
-		assertEquals(false, app.isPalindrome(null));
-	}
-	 @Test
-         public void aTest() {
-             assertEquals(true, true);
-        }
+    }
+
+    @After
+    public void tearDown() throws Exception {
+
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void nullStringTest() throws Exception {
+
+        palindrome.isPalindrome(null);
+
+    }
+
+    @Test
+    public void emptyStringTest() throws Exception {
+
+        input = "";
+
+        assertTrue(palindrome.isPalindrome(input));
+
+    }
+
+    @Test
+    public void multipleWhiteSpaceTest() throws Exception {
+
+        input = "A   Santa         at Nasa";
+
+        assertTrue(palindrome.isPalindrome(input));
+
+    }
+
+    @Test
+    public void singleCharTest() throws Exception {
+
+        input = "H";
+
+        assertTrue(palindrome.isPalindrome(input));
+
+    }
+
+    @Test
+    public void punctuationTest() throws Exception {
+
+        input = "Eva, can I see bees in a cave?";
+
+        assertFalse(palindrome.isPalindrome(input));
+
+    }
+
+    @Test
+    public void unicodeTest() throws Exception {
+
+        input = "\u20A9 My gym \u20A9";
+
+        assertFalse(palindrome.isPalindrome(input));
+
+    }
+
+    @Test
+    public void alphaNumericPalindromeTest() throws Exception {
+
+        input = "Air 2 an a2ria";
+
+        assertTrue(palindrome.isPalindrome(input));
+    }
+
+    @Test
+    public void validPalindromeTest() throws Exception {
+
+        input = "No lemon no melon";
+
+        assertTrue(palindrome.isPalindrome(input));
+    }
+
+    @Test
+    public void invalidPalindromeTest() throws Exception {
+
+        input = "I am a tester";
+
+        assertFalse(palindrome.isPalindrome(input));
+    }
 
 }
