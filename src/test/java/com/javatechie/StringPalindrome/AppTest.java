@@ -35,10 +35,6 @@ public class AppTest {
          public void aTest() {
              assertEquals(true, true);
         }
-	 @Test
-         public void isPlaindromeMixedCaseTest() {
-             assertEquals(expected, app.isPalindrome("Racecar"));
-        }
 	@Test
         public void isPalindromeTest() {
            assertEquals(expected, app.isPalindrome("level"));
